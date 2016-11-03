@@ -114,7 +114,8 @@ public abstract class AbstractExecWarMojo
      * The webapp context path to use for the web application being run.
      * The name to store webapp in exec jar. Do not use /
      */
-    @Parameter( property = "maven.tomcat.path", defaultValue = "${project.artifactId}", required = true )
+    // XXX: default value should have / at beginning
+    @Parameter( property = "maven.tomcat.path", defaultValue = "/${project.artifactId}", required = true )
     protected String path;
 
     @Parameter
