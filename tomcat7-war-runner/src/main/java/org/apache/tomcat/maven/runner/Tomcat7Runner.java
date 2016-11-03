@@ -580,10 +580,11 @@ public class Tomcat7Runner
                 debugMessage( "expand to file:" + expandFile.getPath() );
 
                 // MTOMCAT-211 ensure parent directories created
-
-                if ( !expandFile.getParentFile().mkdirs() )
+                // XXX: try to create only when they not exist
+                File targetDir = expandFile.getParentFile();
+                if ( !targetDir.exists() && !targetDir.mkdirs() )
                 {
-                    throw new Exception( "FATAL: impossible to create directories:" + expandFile.getParentFile() );
+                    throw new Exception( "FATAL: impossible to create directories:" + targetDir );
                 }
 
                 expand( inputStream, expandFile );
