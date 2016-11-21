@@ -26,7 +26,7 @@
     <version>2.2</version>
   </parent>
   <artifactId>tomcat7-maven-plugin</artifactId>
-  <version>2.3</version>
+  <version>2.2.1</version>
   <packaging>maven-plugin</packaging>
   <name>Apache Tomcat Maven Plugin :: Tomcat 7.x</name>
   <description>The Tomcat Maven Plugin provides goals to manipulate WAR projects within the Tomcat 7.x servlet container.
@@ -36,6 +36,8 @@
     <managerWebAppPath>${basedir}/target/</managerWebAppPath>
     <warTestPath>${basedir}/src/test/simple-war-project-1.0-SNAPSHOT.war</warTestPath>
     <keystoreTestPath>${basedir}/src/test/keystore</keystoreTestPath>
+    <maven.compiler.source>1.6</maven.compiler.source>
+    <maven.compiler.target>1.6</maven.compiler.target>
   </properties>
 
   <dependencies>
@@ -157,6 +159,7 @@
     <dependency>
       <groupId>org.apache.tomcat.maven</groupId>
       <artifactId>common-tomcat-maven-plugin</artifactId>
+      <version>2.2</version>
     </dependency>
     <dependency>
       <groupId>org.apache.tomcat.maven</groupId>
@@ -219,6 +222,7 @@
     <dependency>
       <groupId>org.apache.tomcat.maven</groupId>
       <artifactId>tomcat-maven-plugin-it</artifactId>
+      <version>2.2</version>
       <scope>test</scope>
     </dependency>
     <dependency>
